@@ -8,24 +8,31 @@ function AllUsers() {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-  const [isOpenEditForm,setIsOpenEditForm]=useState(false);
+  const [isOpenEditForm, setIsOpenEditForm] = useState(false);
   const [editUser, setEditUser] = useState(null);
-
-  useEffect(() => {
-    console.log("Updated editUser:", editUser);
-  }, [editUser]); 
-
+  
   const handleEdit = (user) => {
-    setEditUser(user); 
+    setEditUser(user);
     setIsOpenEditForm(true);
   };
-  const closeForm = ()=>{
+
+  const handleUserUpdate = (updatedUser) => {
+    console.log("Updated user data:", updatedUser);
+    setUsers((prevUsers) =>
+      prevUsers.map((user) =>
+        user.id === editUser.id ? { ...user, ...updatedUser } : user
+      )
+    );
+    setIsOpenEditForm(false); 
+  };
+
+  const closeForm = () => {
     setIsOpenEditForm(false);
-  }
+  };
 
   const handleDelete = async (id) => {
     try {
-       await axios.delete(`https://reqres.in/api/users/${id}`);
+      await axios.delete(`https://reqres.in/api/users/${id}`);
       setUsers(users.filter((user) => user.id !== id));
       toast.success(`User ID ${id} deleted successfully!`);
     } catch (error) {
@@ -58,8 +65,9 @@ function AllUsers() {
               firstName={user.first_name}
               lastName={user.last_name}
               avatar={user.avatar}
-              onEdit={() => handleEdit(user)} // Pass full user object
+              onEdit={() => handleEdit(user)}
               onDelete={() => handleDelete(user.id)}
+              
             />
           ))
         ) : (
@@ -87,17 +95,8 @@ function AllUsers() {
 
       {/* Edit Form */}
       {isOpenEditForm && (
-        <div className="fixed inset-0 flex items-center justify-center lg:justify-end lg:mr-30    overflow-y-auto">
-           <button
-            className="absolute top-30  text-gray-500 text-lg hover:text-red-500"
-            onClick={closeForm}
-          >
-            Close
-          </button>
-          <EditForm
-          user={editUser}
-          onClose={() => setEditUser(null)} // Properly close form
-        />
+        <div className="fixed inset-0 flex items-center justify-center lg:justify-end lg:mr-30 overflow-y-auto">
+          <EditForm user={editUser} close={closeForm} onUpdateUser={handleUserUpdate} />
         </div>
       )}
     </div>

@@ -4,15 +4,16 @@ import { Toaster } from "react-hot-toast";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes";
 import EditForm from "./EditForm";
+import Filter from "./Filter";
 
 function App() {
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Toaster />
         <AppRoutes/>
-      </BrowserRouter>
-      {/* <EditForm/> */}
+      </BrowserRouter> */}
+      <Filter/>
     </>
   );
 }

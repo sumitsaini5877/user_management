@@ -1,5 +1,5 @@
-import { Pencil, Trash } from "lucide-react";
-
+import { Pencil, Trash, } from "lucide-react";
+ 
 const UserCard = ({ firstName, lastName, avatar, onEdit, onDelete }) => {
   return (
     <div className="max-w-md mt-4 mx-auto bg-gray-300 shadow-lg rounded-2xl overflow-hidden p-4 flex items-center justify-between border border-gray-200 hover:shadow-xl transition-shadow duration-300">

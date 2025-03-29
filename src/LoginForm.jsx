@@ -51,27 +51,22 @@ function LoginForm() {
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Column: Branding and Info */}
           <div className="p-8  flex flex-col justify-center">
-            <div className="flex items-center">
+            <div className="flex items-center justify-center">
               <img
-                src="../communityLogo.jpg"
-                className="w-20 h-20 mix-blend-multiply"
+                src="../people.png"
+                className="w-40 h-40 mix-blend-multiply"
                 alt="Community Logo"
               />
-              <h1 className="text-[#32BE5F] text-2xl font-semibold ml-2">
-                Community<span className="text-[#181717]">X</span>
-              </h1>
+              
             </div>
-            <h2 className="mt-5 text-3xl font-medium">Welcome Back!</h2>
-            <p className="text-neutral-600 text-sm mt-2">
+            <h2 className="mt-5 text-3xl font-medium flex justify-center">Welcome Back!</h2>
+            <p className="text-neutral-600 text-sm mt-2 flex justify-center">
               "Login to access your community.
             </p>
-            <p className="mt-4 text-sm text-gray-700">
-              Join a dynamic platform that empowers communities with unique
-              subdomains and customized experiences.
-            </p>
+            
           </div>
 
-          {/* Right Column: Dynamic Form */}
+          {/* Right Column: Login Form */}
           <div className="p-8 bg-neutral-100 items-center">
             <div className="flex items-center">
               <Formik
@@ -127,7 +122,7 @@ function LoginForm() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="bg-[#32BE5F] text-white font-medium text-md py-2 w-full rounded-md hover:bg-[#519b69] transition duration-200"
+                        className="bg-[#2A7EFF] text-white font-medium text-md py-2 w-full rounded-md hover:bg-[#519b69] transition duration-200"
                       >
                         Login
                       </button>
