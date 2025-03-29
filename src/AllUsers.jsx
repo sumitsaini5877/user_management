@@ -54,6 +54,8 @@ function AllUsers() {
     fetchUsers(page);
   }, [page]);
 
+  
+
   return (
     <div className="min-h-screen w-full bg-gray-200 items-center p-4">
       {/* User Cards */}
@@ -71,7 +73,7 @@ function AllUsers() {
             />
           ))
         ) : (
-          <p className="text-gray-500">Loading users...</p>
+          <p className="text-gray-500 flex justify-center mt-80  text-2xl">Loading users...</p>
         )}
       </div>
 
