@@ -46,7 +46,7 @@ function LoginForm() {
     }
   };
   return (
-    <div className=" flex items-center justify-center p-4">
+    <div className=" flex  justify-center lg:cccccc mt-35 p-4">
       <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-4xl w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           {/* Left Column: Branding and Info */}
@@ -54,7 +54,7 @@ function LoginForm() {
             <div className="flex items-center justify-center">
               <img
                 src="../people.png"
-                className="w-40 h-40 mix-blend-multiply"
+                className="w-15 h-15 lg:w-40 lg:h-40 mix-blend-multiply"
                 alt="Community Logo"
               />
               
