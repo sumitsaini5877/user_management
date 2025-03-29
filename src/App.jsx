@@ -9,11 +9,11 @@ import Filter from "./Filter";
 function App() {
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Toaster />
         <AppRoutes/>
-      </BrowserRouter> */}
-      <Filter/>
+      </BrowserRouter>
+      {/* <Filter/> */}
     </>
   );
 }
