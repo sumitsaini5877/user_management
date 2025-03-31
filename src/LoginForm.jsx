@@ -122,7 +122,7 @@ function LoginForm() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="bg-[#2A7EFF] text-white font-medium text-md py-2 w-full rounded-md hover:bg-[#519b69] transition duration-200"
+                        className="bg-[#2A7EFF] text-white font-medium text-md py-2 w-full rounded-md hover:bg-[#2a7fffda] transition duration-200"
                       >
                         Login
                       </button>
